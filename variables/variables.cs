@@ -20,7 +20,9 @@ namespace variables
 		public static void Main (string[] args)
 		{
 			long numberOfLines;
-			string pathVariables = "/media/ntfs2/FirefoxProfile/zotero/storage/MKDMD6AZ/variables/mainVariables.txt";
+			string path = args[0];
+			string pathVariables = path + "/variables/mainVariables.txt";
+			string pathConstant = path + "/variables/";
 			string text = System.IO.File.ReadAllText(pathVariables);
 
 			System.Console.WriteLine (text);
@@ -85,8 +87,6 @@ namespace variables
 			{
 				Console.WriteLine("Substring: {0}", s);
 			}
-		
-			string pathConstant = "/media/ntfs2/FirefoxProfile/zotero/storage/MKDMD6AZ/variables/";
 
 			//
 			// Writes company name into coverLetterRecipientFirstLine.txt
