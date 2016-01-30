@@ -148,6 +148,7 @@ namespace variables
 					}
 				}
 			}
+
 			//
 			// Writes coverLetterPosition.txt
 			//
@@ -155,6 +156,24 @@ namespace variables
 			{
 				outfile.Write(textSliced[8].Trim());
 			}
+
+			//Bewerbung auf die Stelle DE00344280 als Entwicklungsingenieur industrielle Bildverarbeitungssysteme
+
+			string position = textSliced[8].Trim();
+
+			string[] stringSeparators = new string[] {"Bewerbung auf die Stelle "," als"};
+			string[] jobCodeNumber = position.Split(stringSeparators, StringSplitOptions.RemoveEmptyEntries);
+
+			Console.WriteLine("Job number: " + jobCodeNumber[0]);
+
+			//
+			// Finds the job number in the coverLetterPosition.txt and writes it to coverLetterCodeNumber.txt
+			//
+			using (StreamWriter outfile = new StreamWriter(pathConstant + "coverLetterCodeNumber.txt"))
+			{
+				outfile.Write("\\ " + jobCodeNumber[0]);
+			}
+
 			//
 			// Writes coverLetterSalary.txt
 			//
